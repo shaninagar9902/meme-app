@@ -1,0 +1,66 @@
+<!-- FAVORITES HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make it meme</title>
+    <link rel="icon" type="image/x-icon" href="assets\image1.ico">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body onload="onInitFavorites()">
+    <header>
+        <nav class="navbar">
+            <div class="title-icon">
+                <img class="icon" src="assets\image1.ico" alt="website icon">
+                <h1>Make it meme</h1>
+            </div>
+            <div class="btn-pages">
+                <a class="btn" href="index.html">Gallery 🖼️</a>
+                <a class="btn" href="favorites.html">Favorites ❤️</a>
+                <a class="btn" href="about.html">About ℹ️</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Your Favorites</h1>
+        <!-- <section class="canvas-container hidden">
+            <canvas class="my-canvas" width="580" height="450" onclick="onCanvasClick(event)"></canvas>
+            <div class="controls">
+                <a href="#" onclick="downloadCanvas(this)" class="btn" download="file-name">Download</a>
+                <input type="text" placeholder="Enter meme text..." oninput="onSetLineText(this.value)">
+                <input type="color" value="#000000" oninput="onSetLineColor(this.value)">
+                <button onclick="onChangeFontSize(1)">+</button>
+                <button onclick="onChangeFontSize(-1)">-</button>
+                <button onclick="onAddLine()">Add Line</button>
+                <button onclick="onSwitchLine()">Switch Line</button>
+                <select onchange="onSetFont(this.value)">
+                    <option value="Impact">Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+                <button onclick="onToggleAlign()">Align</button>
+                <button onclick="onRemoveLine()">Remove</button>
+                <button onclick="onMoveLine(-10)">⬆️</button>
+                <button onclick="onMoveLine(10)">⬇️</button>
+                <button onclick="onSaveMeme()">Save</button>
+            </div>
+        </section> -->
+        <section class="select-img-container"></section>
+    </main>
+
+    <footer>This website was built by &copy;Shaniki</footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/memeService.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/galleryController.js"></script>
+
+</body>
+
+</html>

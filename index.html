@@ -1,0 +1,114 @@
+<!-- INDEX HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make it meme</title>
+    <link rel="icon" type="image/x-icon" href="assets\image1.ico">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body onload="onInit()">
+    <header>
+        <nav class="navbar">
+            <div class="title-icon">
+                <img class="icon" src="assets\image1.ico" alt="website icon">
+                <h1>Make it meme</h1>
+            </div>
+            <div class="btn-pages">
+                <a class="btn" href="index.html">Gallery 🖼️</a>
+                <a class="btn" href="favorites.html">Favorites ❤️</a>
+                <a class="btn" href="about.html">About ℹ️</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="title">Memes Gallery</h1>
+        <div class="searchers">
+            <label class="search">Search Meme
+                <input type="search" placeholder="Enter Here..." oninput="onSetSearch(this.value)">
+            </label>
+            <div class="keywords-container"></div>
+            <div class="search-btns">
+                <button onclick="onImFlexible()">I'm flexible</button>
+                <label class="btn custom-file-upload">Upload
+                    <input type="file" class="file-input" name="image" onchange="onImgInput(event)" accept="image/*" />
+                </label>
+                <!-- <input list="filter-list" placeholder="Filter..." oninput="onSetFilter(this.value)"> -->
+                <!-- <datalist id="filter-list"> -->
+                <select onchange="onSetFilter(this.value)">
+                    <option value="all">All</option>
+                    <option value="funny">Funny</option>
+                    <option value="cute">Cute</option>
+                    <option value="mood">Mood</option>
+                    <option value="us">Us</option>
+                    <option value="black">Black</option>
+                </select>
+                <!-- </datalist> -->
+            </div>
+        </div>
+
+        <section class="canvas-container hidden">
+            <canvas class="my-canvas" width="580" height="450" onclick="onCanvasClick(event)"></canvas>
+            <div class="controls">
+                <input class="ctrl-text" type="text" placeholder="Enter meme text..."
+                    oninput="onSetLineText(this.value)">
+
+                <button class="ctrl-up" onclick="onMoveLine(-10)">⬆️</button>
+                <button class="ctrl-down" onclick="onMoveLine(10)">⬇️</button>
+                <button class="ctrl-add" onclick="onAddLine()">Add Line</button>
+                <button class="ctrl-remove" onclick="onRemoveLine()">Remove Line</button>
+
+
+                <button class="ctrl-font-plus" onclick="onChangeFontSize(1)">A+</button>
+                <button class="ctrl-font-minus" onclick="onChangeFontSize(-1)">A-</button>
+                <button class="ctrl-switch" onclick="onSwitchLine()">Switch Line</button>
+                <button class="ctrl-align" onclick="onToggleAlign()">Align Text</button>
+
+
+
+                <div class="ctrl-sticker">
+                    <button onclick="scrollStickers(-1)">⬅️</button>
+                    <div class="sticker-display"></div>
+                    <button onclick="scrollStickers(1)">➡️</button>
+                </div>
+                <select class="ctrl-font" onchange="onSetFont(this.value)">
+                    <option value="">Font</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Comic Sans MS">Comic Sans MS</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+                <input class="ctrl-stroke" type="color" value="#000000" oninput="onSetStrokeColor(this.value)">
+                <input class="ctrl-color" type="color" value="#ffffff" oninput="onSetLineColor(this.value)">
+
+                <a href="#" class="ctrl-download btn" onclick="downloadCanvas(this)" download="file-name">Download</a>
+                <button class="ctrl-share" onclick="toggleShareMenu()">Share</button>
+            </div>
+            <div class="modal-overlay hidden" onclick="toggleShareMenu()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <h3>Share your meme!</h3>
+                    <button onclick="onShareMeme()">Share</button>
+                    <button onclick="onSaveMeme()">Save on favorites</button>
+                    <button onclick="onUploadImg()">Share on Facebook</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="select-img-container"></section>
+    </main>
+
+    <footer>This website was built by &copy;Shaniki</footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/memeService.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/galleryController.js"></script>
+</body>
+
+</html>
